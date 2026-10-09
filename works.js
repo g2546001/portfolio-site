@@ -139,6 +139,6 @@ categorySelect.addEventListener("change", function() {
 });
 
 //ソート変更時
-sortSelect.addEventListener("change", function( {
+sortSelect.addEventListener("change", function() {
     displayWorks();
-}));
+});
