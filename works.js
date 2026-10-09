@@ -48,7 +48,6 @@ fetch("works.csv")
             grid.appendChild(card);
         });
 
-    })
 
 //カテゴリー一覧を作る
 var categories = [];
@@ -85,7 +84,6 @@ function displayWorks() {
             return work.category === selectedCategory;            
         });
     }
-}
 
 //ソート
 if (sortType === "new") {
@@ -130,6 +128,8 @@ filteredWorks.forEach(function(work) {
     grid.appendChild(card);
 });
 
+}
+
 //最初に表示
 displayWorks();
 
@@ -142,3 +142,4 @@ categorySelect.addEventListener("change", function() {
 sortSelect.addEventListener("change", function() {
     displayWorks();
 });
+    });
