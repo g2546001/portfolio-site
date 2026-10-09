@@ -118,7 +118,7 @@ filteredWorks.forEach(function(work) {
 
     card.innerHTML =
         '<a href="' + work.link + '">' +
-            '<img scr="' + work.image + '" alt="' + work.title + '">' +
+            '<img src="' + work.image + '" alt="' + work.title + '">' +
             '<div class="work-info">' +
                 '<p class="work-category">' + work.category + '</p>' +
                 '<h4>' + work.title + '</h4>' +
