@@ -25,7 +25,7 @@ fetch("works.csv")
         });
 
         // Worksを表示する場所
-        var grid = ducument.getElementById("works-grid");
+        var grid = document.getElementById("works-grid");
 
         var categorySelect = document.getElementById("category");
 
