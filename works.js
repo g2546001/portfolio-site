@@ -74,7 +74,7 @@ function displayWorks() {
     var selectedCategory = categorySelect.value;
 
     //選択されたソート方法を取得
-    varsortType = sortSelect.value;
+    var sortType = sortSelect.value;
 
     //元のWorksをコピー
     var filteredWorks = works.slice();
