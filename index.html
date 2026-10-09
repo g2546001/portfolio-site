@@ -15,7 +15,7 @@
         </header>
         <main>
             <section id="top">  
-                <img scr="./media/pengin.jpg" width="80%">
+                <img src="media\a5c29bee56aa6f0f06e13beae84c3db0.jpg" width="80%">
                 <h1>
                     Riko Akagawa<br>
                     portfolio
@@ -31,10 +31,12 @@
                     学年：二年
                 </p>
             </section>
-            <section id="works">
+            <section id="works" class="works">
                 <h3>Works</h3>
-                <ul>
-                    <li>アプリ</li>
+                <div id="works-grid"></div>
+                    <li>バナーデザイン</li>
+                    <li>Processing小作品</li>
+                    <li>アプリUIデザイン</li>
                 </ul>
             </section>
         </main>
@@ -43,3 +45,17 @@
         </footer>
     </body>
 </html>
+<section id="works" class="works">
+    <h3>Works</h3>
+    <div class="works-controls">
+        <select id="category">
+            <option value="all">すべてのカテゴリ</option>
+        </select>
+        <select id="sort">
+            <option value="new">新しい順</option>
+            <option value="old">古い順</option>
+            <option value="title">タイトル順</option>
+        </select>
+    </div>
+    <div id="works-grid"></div>
+</section>
