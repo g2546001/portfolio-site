@@ -95,7 +95,7 @@ if (sortType === "new") {
 }
 else if (sortType === "old") {
     filteredWorks.sort(function(a, b) {
-        return Number(a.year) - Number(b.tear);
+        return Number(a.year) - Number(b.year);
     });
 }
 else if (sortType === "title") {
