@@ -5,8 +5,8 @@ html {
     scroll-padding-top: 50px;
 }
 body {
-    background-color: white;
-    transition: background-color 1s;
+    background-color: #fdc1da;
+    transition: background-color 0.5s ease;
 }
 
 a {
@@ -20,9 +20,11 @@ header {
     width: 100%;
     position: fixed;
     padding: 0px 30px;
-    background: #ffffff;
+    background: #271b20;
+transition: background-color 0.5s ease;
     height: 75px;
     top: 0;
+    z-index: 1000;
 }
 nav {
     display: flex;
@@ -112,6 +114,15 @@ nav a:hover {
     .works-controls {
         flex-direction: column;
     }
+    .top-bears {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.top-bears img {
+    height: 200px;
+}
 }
 
 #works-grid {
@@ -130,4 +141,291 @@ nav a:hover {
     height: 180px;
     object-fit: cover;
     display: block;
+}
+/* Y2K カラーチェンジボタン */
+.mood-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mood-button {
+    background: #ffb6d5;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    font-size: 27px;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px #d96b9f;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#mood-button:hover {
+    transform: rotate(20deg) scale(1.15);
+    box-shadow: 4px 4px 0px #a64d78;
+}
+
+#mood-button:active {
+    transform: scale(0.9);
+}
+/* Y2K 作品カードのアニメーション */
+.work-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.work-card:hover {
+    transform: translateY(-10px) rotate(-3deg);
+    box-shadow: 8px 10px 0px #ff91bd;
+    opacity: 1;
+}
+
+/* 2番目のカードは逆向きに傾く */
+.work-card:nth-child(even):hover {
+    transform: translateY(-10px) rotate(3deg);
+}
+
+/* スマホではタップ時に少し小さくなる */
+@media screen and (max-width: 600px) {
+    .work-card:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+    .work-card:active {
+        transform: scale(0.97);
+    }
+}
+/* すべての作品カードを動かす */
+#works-grid .work-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: none;
+}
+
+#works-grid .work-card:hover {
+    transform: translateY(-10px) rotate(-3deg);
+    box-shadow: 8px 10px 0px #ff91bd;
+    opacity: 1;
+}
+
+#works-grid .work-card:nth-child(even):hover {
+    transform: translateY(-10px) rotate(3deg);
+}
+/* Y2K キラキラカーソル */
+.cursor-sparkle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-size: 18px;
+    animation: sparkle-fade 0.7s ease-out forwards;
+}
+
+@keyframes sparkle-fade {
+    0% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -90%) scale(0.3) rotate(45deg);
+    }
+}
+/* Y2Kデコレーション */
+#top {
+    position: relative;
+    overflow: hidden;
+}
+
+.y2k-decorations {
+    position: absolute;
+    top: 90px;
+    right: 8%;
+    width: 140px;
+    height: 160px;
+    pointer-events: none;
+}
+
+/* Y2Kトップコラージュ */
+#top {
+    padding-top: 100px;
+    padding-bottom: 40px;
+}
+
+.top-collage {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 中央の名前 */
+.top-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+.top-title h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 6vw, 78px);
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    color: #262626;
+    text-shadow: none;
+    margin: 0;
+}
+
+
+/* ステッカー共通 */
+.sticker {
+    position: absolute;
+    z-index: 1;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(3px 5px 2px #b5658a55);
+    transition: transform 0.3s ease;
+}
+
+/* ステッカーの配置 */
+.sticker1 {
+    width: 130px;
+    top: 5%;
+    left: 5%;
+    transform: rotate(-15deg);
+}
+
+.sticker2 {
+    width: 120px;
+    top: 5%;
+    right: 5%;
+    transform: rotate(12deg);
+}
+
+.sticker3 {
+    width: 135px;
+    bottom: 5%;
+    left: 10%;
+    transform: rotate(10deg);
+}
+
+.sticker4 {
+    width: 200px;
+    bottom: 0%;
+    right: 10%;
+    transform: rotate(-12deg);
+}
+
+.sticker5 {
+    width: 160px;
+    top: 0%;
+    left: 45%;
+    transform: rotate(15deg);
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 600px) {
+    .top-collage {
+        min-height: 380px;
+    }
+
+    .top-title h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 6vw, 78px);
+    font-weight: bold;
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    line-height: 1.1;
+    color: #484848;
+    text-shadow: none;
+    margin: 0;
+}
+
+    .sticker {
+        width: 75px;
+    }
+}
+/* Editorial Pink Header */
+header {
+    background: #f9f9c7;
+    border-bottom: 1px solid #ad6288;
+    box-shadow: none;
+    z-index: 1000;
+    gap: 15px;
+}
+
+/* ロゴ */
+.header-logo {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    text-decoration: none;
+}
+
+.logo-name {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 34px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    color: #572744;
+}
+
+.logo-subtitle {
+    font-family: Arial, sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    color: #8f5473;
+    margin-top: 5px;
+}
+
+/* ナビゲーション */
+header nav a {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #572744;
+}
+
+header nav a:hover {
+    color: #df5b94;
+}
+
+/* スマホ対応 */
+@media screen and (max-width: 600px) {
+    header {
+        padding: 0 12px;
+        gap: 8px;
+    }
+
+    .logo-name {
+        font-size: 24px;
+    }
+
+    .logo-subtitle {
+        font-size: 6px;
+        letter-spacing: 1px;
+    }
+
+    header nav {
+        gap: 10px;
+    }
+
+    header nav a {
+        font-size: 11px;
+        letter-spacing: 0;
+    }
+
+    #mood-button {
+        width: 34px;
+        height: 34px;
+        font-size: 21px;
+    }
 }

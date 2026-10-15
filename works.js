@@ -143,4 +143,60 @@ sortSelect.addEventListener("change", function() {
     displayWorks();
 });
     });
+// Y2K カラーチェンジ機能
+const moodButton = document.getElementById("mood-button");
 
+const moodColors = [
+    ["#ffffff", "#ffffff", "#ffb6d5"],
+    ["#ffd6e7", "#ffb6d5", "#ff69b4"],
+    ["#e3d5ff", "#c9b6ff", "#a78bfa"],
+    ["#fff0b3", "#ffe080", "#ffb347"],
+    ["#d8f3dc", "#a8e6b0", "#70c989"]
+];
+
+let moodIndex = 0;
+
+moodButton.addEventListener("click", function() {
+    moodIndex = (moodIndex + 1) % moodColors.length;
+
+    document.body.style.backgroundColor = moodColors[moodIndex][0];
+
+    document.querySelector("header").style.backgroundColor =
+        moodColors[moodIndex][1];
+
+    moodButton.style.backgroundColor = moodColors[moodIndex][2];
+});
+// Y2K キラキラカーソル
+const sparkleSymbols = ["✦", "★", "✧", "♡", "✳"];
+let lastSparkleTime = 0;
+
+document.addEventListener("pointermove", function(e) {
+    // マウス操作のときだけ表示
+    if (e.pointerType !== "mouse") return;
+
+    // 星が出すぎないように調整
+    const now = Date.now();
+    if (now - lastSparkleTime < 60) return;
+    lastSparkleTime = now;
+
+    const sparkle = document.createElement("span");
+    sparkle.className = "cursor-sparkle";
+
+    // ランダムな星やハートを表示
+    sparkle.textContent =
+        sparkleSymbols[Math.floor(Math.random() * sparkleSymbols.length)];
+
+    sparkle.style.left = e.clientX + "px";
+    sparkle.style.top = e.clientY + "px";
+
+    // ランダムな色
+    const colors = ["#ff69b4", "#a78bfa", "#ffb347", "#ffffff"];
+    sparkle.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+    document.body.appendChild(sparkle);
+
+    // アニメーション終了後に削除
+    setTimeout(function() {
+        sparkle.remove();
+    }, 700);
+});
